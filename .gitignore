@@ -1,3 +1,5 @@
+# own specified export folder
+export/
 
 # Godot-specific ignores
 .import/
