@@ -34,8 +34,8 @@ vec3 hsv(float hue, float saturation, float value){
 }
 
 void fragment(){
-	vec2 c = get_coordinate(SCREEN_UV, x_range_min, x_range_max, y_range_min, y_range_max);
-	vec2 z = vec2(0,0);
+	vec2 c = get_coordinate(UV, x_range_min, x_range_max, y_range_min, y_range_max);
+	vec2 z = vec2(c.x,c.y);
 	
 	int i = 0;
 	while(i < iterations && z.x*z.x+z.y*z.y < 4.0){
@@ -45,5 +45,5 @@ void fragment(){
 		i++;
 	}
 	float m = float(i)/float(iterations);
-	COLOR.rgb = hsv(360.0*m, 1.0, 1.0-m);
+	COLOR.rgb = hsv(2.0*360.0*m, 1.0, 1.0-m);
 }

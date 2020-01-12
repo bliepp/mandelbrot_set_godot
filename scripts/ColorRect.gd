@@ -39,6 +39,8 @@ func _input(event):
 			details(+1)
 		if event.scancode == KEY_MINUS:
 			details(-1)
+		if event.scancode == KEY_F:
+			screenshot("screenshot.png")
 	
 	# zoom in/out
 	if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_UP:
@@ -57,7 +59,7 @@ func _input(event):
 		if draggable:
 			var xrange = mat.get_shader_param("x_range_max") - mat.get_shader_param("x_range_min")
 			var yrange = mat.get_shader_param("y_range_max") - mat.get_shader_param("y_range_min")
-			move(-xrange/size.x * mouse[0], yrange/size.y * mouse[1]) # convert relative mosue movement (px) to range change on canvas
+			move(-xrange/size.x * mouse[0], -yrange/size.y * mouse[1]) # convert relative mosue movement (px) to range change on canvas
 
 
 func move(x, y):
@@ -99,6 +101,10 @@ func details(amount):
 	var new = mat.get_shader_param("iterations") + amount
 	if new > 0:
 		mat.set_shader_param("iterations", new)
+
+
+func screenshot(filename):
+	get_viewport().get_texture().get_data().save_png(filename)
 
 
 func resize():
