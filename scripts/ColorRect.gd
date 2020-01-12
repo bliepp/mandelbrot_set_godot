@@ -3,6 +3,8 @@ extends ColorRect
 var size
 var mat
 
+var screenshot_count = 0
+
 var draggable = false
 
 # Called when the node enters the scene tree for the first time.
@@ -36,11 +38,11 @@ func _input(event):
 	# increase/decrease iterations
 	if event is InputEventKey and event.pressed:
 		if event.scancode == KEY_PLUS:
-			details(+1)
+			details(+10)
 		if event.scancode == KEY_MINUS:
-			details(-1)
+			details(-10)
 		if event.scancode == KEY_F:
-			screenshot("screenshot.png")
+			screenshot("screenshot_%06d.png" % screenshot_count)
 	
 	# zoom in/out
 	if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_UP:

@@ -45,5 +45,5 @@ void fragment(){
 		i++;
 	}
 	float m = float(i)/float(iterations);
-	COLOR.rgb = hsv(2.0*360.0*m, 1.0, 1.0-m);
+	COLOR.rgb = hsv(360.0*m * 1.0, 1.0, ceil(1.0-1.1*m));
 }
