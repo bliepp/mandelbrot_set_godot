@@ -17,7 +17,6 @@ _global_script_class_icons={
 
 config/name="Mandelbrot"
 run/main_scene="res://scenes/Main2D.tscn"
-config/icon="res://icon.png"
 
 [display]
 
