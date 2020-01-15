@@ -29,8 +29,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	size = get_viewport().size
-	mat = self.get_material()
-	
 	resize()
 
 
