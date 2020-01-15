@@ -103,6 +103,7 @@ func details(amount):
 	var new = mat.get_shader_param("iterations") + amount
 	if new > 0:
 		mat.set_shader_param("iterations", new)
+	# alternative: set to max(1, new)
 
 
 func screenshot(filename):
