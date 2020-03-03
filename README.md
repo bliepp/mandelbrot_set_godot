@@ -6,4 +6,4 @@ It basically consists of an ColorRect with a shader applied to it. Since Godot s
 # Running it
 To run it you can easily execute it with your instance of the Godot Engine. There are no further dependencies. Another way is to run it directly from your Browser:
 
-[Web version](https://apps.fabio-oelschlaeger.de/mandelbrot/)
+[Web version](https://fabio-oelschlaeger.de/projects/algorithms/mandelbrot-set-godot-engine/)
